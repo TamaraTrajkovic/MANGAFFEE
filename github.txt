@@ -1,0 +1,32 @@
+git add -A (sve)
+git commit -m "sta je dodato"
+git push origin master
+
+- git pull origin master
+
+- git log
+
+- git status
+
+- dodavanje grane: 
+
+git branch ____(ime grane)
+git checkout ____(ime grane)
+
+git add..
+git commit..
+
+ako smo zadovoljni:
+
+git checkout master
+git merge ____(ime grane) 
+
+sad moze da se obrise grana:
+
+git branch -d _____(ime grane) 
+git branch
+
+git push origin master
+
+
+- git branch - da vidimo koje su sve grane
