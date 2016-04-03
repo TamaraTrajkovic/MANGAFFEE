@@ -21,6 +21,8 @@ ako smo zadovoljni:
 git checkout master
 git merge ____(ime grane) 
 
+git pull --rebase origin master  
+
 sad moze da se obrise grana:
 
 git branch -d _____(ime grane) 
