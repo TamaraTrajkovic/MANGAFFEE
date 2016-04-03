@@ -32,3 +32,5 @@ git push origin master
 - git branch - da vidimo koje su sve grane
 
 jovanastojkovic.ek@gmail.com
+
+git add 
