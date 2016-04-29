@@ -16,3 +16,14 @@ body {
 .navbar-brand {
     margin-left: 30px  !important;
 }
+#kontakt {
+    margin-left: 5%
+}
+
+.form-control {
+    width: 250px !important;
+}
+
+.btn {
+    margin-top: 20px;
+}

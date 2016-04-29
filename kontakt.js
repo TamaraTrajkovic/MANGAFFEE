@@ -3,8 +3,52 @@ window.onload = init;
 function init(){
 	var dugme = document.getElementById("dugme");
 	dugme.onclick = validacija;
+	var email = document.getElementById("email").value;
+	var divEmail = document.getElementById("divEmail");
+	var inEmail = document.getElementById("email");
+	inEmail.onchange = function()
+	{
+		validateEmail(divEmail,this.value);
+	};
 	
 }
+
+function validateEmail(div, val){
+	if(val != "" && val.indexOf('@')>6)
+	{
+		div.setAttribute("class", "form-group has-feedback has-success");
+		var span = document.createElement("span");
+		span.setAttribute("class", "form-control-feedback");
+		var img = document.createElement("img");
+		img.setAttribute("src", "slike/ok.jpg");
+		img.setAttribute("width", "15px");
+		img.setAttribute("heigth", "15px");
+		
+		div.appendChild(span);
+		span.appendChild(img);
+	}
+	else
+    {
+		div.setAttribute("class", "form-group has-feedback has-error");
+		var span = document.createElement("span");
+		span.setAttribute("class", "form-control-feedback");
+		var img = document.createElement("img");
+		img.setAttribute("src", "slike/delete.png");
+		img.setAttribute("width", "15px");
+		img.setAttribute("heigth", "15px");
+		
+		div.appendChild(span);
+		span.appendChild(img);
+        
+        var nijedobro = document.createElement("span");
+        nijedobro.innerHTML = "Email nije validan";
+        
+      	divEmail.appendChild(nijedobro);
+       
+	}
+}
+
+
 
 
 function validacija(){
@@ -20,7 +64,7 @@ function validacija(){
 		var span = document.createElement("span");
 		span.setAttribute("class", "form-control-feedback");
 		var img = document.createElement("img");
-		img.setAttribute("src", "ok.jpg");
+		img.setAttribute("src", "slike/ok.jpg");
 		img.setAttribute("width", "15px");
 		img.setAttribute("heigth", "15px");
 		
@@ -33,7 +77,7 @@ function validacija(){
 		var span = document.createElement("span");
 		span.setAttribute("class", "form-control-feedback");
 		var img = document.createElement("img");
-		img.setAttribute("src", "delete.png");
+		img.setAttribute("src", "slike/delete.png");
 		img.setAttribute("width", "15px");
 		img.setAttribute("heigth", "15px");
 		
@@ -47,13 +91,15 @@ function validacija(){
        
 	}
 	
+
+
 	if(komentar != "" && komentar.length>2)
 	{
 		divKomentar.setAttribute("class", "form-group has-feedback has-success");
 		var span = document.createElement("span");
 		span.setAttribute("class", "form-control-feedback");
 		var img = document.createElement("img");
-		img.setAttribute("src", "ok.jpg");
+		img.setAttribute("src", "slike/ok.jpg");
 		img.setAttribute("width", "15px");
 		img.setAttribute("heigth", "15px");
 		
@@ -66,7 +112,7 @@ function validacija(){
 		var span = document.createElement("span");
 		span.setAttribute("class", "form-control-feedback");
 		var img = document.createElement("img");
-		img.setAttribute("src", "delete.png");
+		img.setAttribute("src", "slike/delete.png");
 		img.setAttribute("width", "15px");
 		img.setAttribute("heigth", "15px");
 		
@@ -82,5 +128,5 @@ function validacija(){
         
     
 	}
-	
-}	
+
+}
