@@ -1,6 +1,6 @@
 <?php
 
-include "lokacija.html";
+include "projekat.html";
 require "connection.php";
 
 $sql = "SELECT * FROM kontakt";

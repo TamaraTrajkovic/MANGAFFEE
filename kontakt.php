@@ -1,7 +1,9 @@
-<?php include "lokacija.html";
+<?php include "kontakt.html";
 include "connection.php";
 ?>
-	
+
+<script type="text/javascript" src="kontakt.js"></script>
+
 <div id = "kontakt">
     <h1>Kontakt</h1>
 </div>
