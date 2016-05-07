@@ -26,6 +26,8 @@ function validateEmail(div, val){
 		
 		div.appendChild(span);
 		span.appendChild(img);
+		
+
 	}
 	else
     {
@@ -70,6 +72,7 @@ function validacija(){
 		
 		divIme.appendChild(span);
 		span.appendChild(img);
+
 		
 	}
 	else{
@@ -105,6 +108,7 @@ function validacija(){
 		
 		divKomentar.appendChild(span);
 		span.appendChild(img);
+
 		
 	}
 	else{
