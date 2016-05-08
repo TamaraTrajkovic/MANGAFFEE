@@ -17,8 +17,25 @@ body {
 .navbar-brand {
     margin-left: 30px  !important;
 }
+
 footer {
     background-color: pink;
     margin-top: 60%;
+<<<<<<< HEAD
     text-align-last: center;
+=======
+}
+
+#kontakt {
+    margin-left: 5%
+}
+
+.form-control {
+    width: 250px !important;
+}
+
+.btn {
+    margin-top: 20px;
+
+>>>>>>> 5e43f2e573d67bdc4c48b5cb119ee20ec511a3e3
 }
