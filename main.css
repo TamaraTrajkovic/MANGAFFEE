@@ -18,6 +18,7 @@ body {
     margin-left: 30px  !important;
 }
 footer {
-    background-color: brown;
+    background-color: pink;
     margin-top: 60%;
+    text-align-last: center;
 }
