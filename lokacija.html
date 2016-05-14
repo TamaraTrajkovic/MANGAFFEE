@@ -18,6 +18,9 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js">
 	</script>
 	
+	<script type="text/javascript" src="lokacija.js"> </script>
+	<script type="text/javascript" language="javascript" src="/js/jquery/jquery-1.9.1.min.js"></script>
+	
 	</head>
 	<body>
 	<div class="container-fluid">
@@ -63,18 +66,90 @@
 	</div>
 	
 				</div>
-				
 					
-				<div id = "lokacija">
-					<h3>Lokacija</h3>
+			<section id="placelocation"  align = "center">
+			<div class="heading">
+				<span><i class="icon-pin"></i></span>
+				<h2>Lokacija - Mangaffee</h2>
+			</div>
+			<div class="mapholder" id="localmap" style="width:50%; height:370px">
 
-					<p>Kao sto rekoh ne postojimo!</p>
-
-				</div>
+			</div>
+		</section>
 				
-	
-	
-	
-	
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"> </script>
+<script type="text/javascript">
+
+
+    $(window).load(function() {
+
+		// Add place phones to heading
+		$('.page-heading').find('h1').append(' <a href="tel:+38166 222 153">066 222 153</a>; &nbsp;<a href="tel:+38166 222 152">066 222 152</a>; &nbsp;<a href="tel:+38166 222 151">066 222 151</a>');
+
+        var myOptions = {
+            zoom: 15,
+            center: new google.maps.LatLng(44.818620,20.445385),
+			styles: [],
+
+			scrollwheel: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP };
+        var map = new google.maps.Map(document.getElementById("localmap"), myOptions);
+
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(44.818620,20.445385),
+            map: map,
+			icon: 'http://www.gdeizaci.com/upload/PlaceType/PinImage/2015-01/Kafane.png'
+        });
+
+		// Set info window
+		var infowindow = new google.maps.InfoWindow();
+
+		google.maps.event.addListener(marker, 'click', function() {
+		   infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />066 222 153</p>");
+		   infowindow.open(map, marker);
+		});
+
+		// Open info popup by default
+		infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />066 222 153</p>");
+		infowindow.open(map, marker);
+    });
+
+	$(document).ready(function() {
+		$('.reservation-link').click(function(){
+
+			// Hide old validation messages
+			$('#placeReservationForm').find('.validation-error-message, .form-message-error').hide();
+
+			var isMobile = 'false';
+			if(isMobile == 'false') {
+				$('.fade').css({"opacity" : "1" , "z-index" : "99999", "top" : "0px"});
+				$('.fade').show();
+			};
+			var eventDate = $(this).siblings().find('p').text();
+			var eventDateFormat = $(this).siblings().find('p').attr('data-date');
+			var eventTitle = $(this).siblings().find('h3').text();
+			$('.reservation-popup').find('div.top').find('p').html($('.reservation-popup').find('div.top').find('p').find('i'));
+			$('.reservation-popup').find('div.top').find('p').append(eventDate);
+			$('input.reserv-Date').attr("value", eventDateFormat);
+			$('.reservation-popup').find('div.top').find('h3').text(eventTitle);
+			$('input.event-Title').attr("value", eventTitle);
+		});
+
+		$('.icon-close').click(function(){
+			$('.fade').css({"opacity" : "0" , "z-index" : "-1", "top" : "-100%"});
+			$('.reservation-success').hide();
+			$('.reservation-form').show();
+		});
+
+		// Scroll to map on the page
+		$('a.scroll').click(function(e) {
+			var mapDiv = $(this).attr('data-href');
+
+			$('html,body').animate({scrollTop: $(mapDiv).offset().top - $('header').height()}, 500);
+			e.preventDefault();
+		});
+	});
+</script>
+
 	</body>
 </html>	
