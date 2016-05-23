@@ -67,22 +67,23 @@
 	
 				</div>
 					
-			<section id="placelocation"  align = "center">
+			<section id="placelocation" >
 			<div class="heading">
 				<span><i class="icon-pin"></i></span>
 				<h2>Lokacija - Mangaffee</h2>
 			</div>
-			<div class="mapholder" id="localmap" style="width:50%; height:370px">
+			<div class="mapholder" id="localmap" style="width:50%; height:370px" align = "center">
 
 			</div>
 		</section>
-				
+	 <div class="container-fluid">			
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"> </script>
 <script type="text/javascript">
 
 
+ 
     $(window).load(function() {
-
+align = "center"
 		// Add place phones to heading
 		$('.page-heading').find('h1').append(' <a href="tel:+38166 222 153">066 222 153</a>; &nbsp;<a href="tel:+38166 222 152">066 222 152</a>; &nbsp;<a href="tel:+38166 222 151">066 222 151</a>');
 
@@ -105,12 +106,12 @@
 		var infowindow = new google.maps.InfoWindow();
 
 		google.maps.event.addListener(marker, 'click', function() {
-		   infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />066 222 153</p>");
+		   infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />065 222 153</p>");
 		   infowindow.open(map, marker);
 		});
 
 		// Open info popup by default
-		infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />066 222 153</p>");
+		infowindow.setContent("<p> Mangaffee <br />Ušće, Beograd<br />065 222 153</p>");
 		infowindow.open(map, marker);
     });
 
@@ -149,7 +150,8 @@
 			e.preventDefault();
 		});
 	});
+	
 </script>
-
+</div>
 	</body>
 </html>	
